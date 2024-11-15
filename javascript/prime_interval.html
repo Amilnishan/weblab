@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>prime numbers</title>
+    </head>
+    <body>
+        <h2 align="center">Prime numbers</h2><hr><br>
+        <script>
+            var start=Number(prompt("enter the starting number"))
+            var end=Number(prompt("enter the final number"))
+            document.write("The prime numbers are:","<br>")
+            for(var i=start;i<=end;i++){
+                let isprime=true
+
+                for(var j=2;j<=i/2;j++){
+                    if(i%j==0){
+                        isprime=false
+                        break
+                    }
+                }
+                if(isprime)
+                {
+                    document.write(i,"<br>")
+                }
+            }
+        
+        </script>
+    </body>
+</html>

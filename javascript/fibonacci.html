@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <h2 align="center">Fibonacci series</h2><hr><br>
+        <script>
+            var f1=0
+            var f2=1
+            var fn=0
+
+            document.write(f1,"<br>",f2,"<br>")
+            var limit=prompt("enter the limit:")
+            while(f2<=limit)
+            {
+
+                fn=f1+f2
+                f1=f2
+                f2=fn
+
+                document.write(fn,"<br>")
+            }
+        </script>
+    </body>
+</html>
