@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>JS string and math functions</title>
+    </head>
+    <body bgcolor="yellow">
+        <br><h2 align="center" style="font-family: Arial, Helvetica, sans-serif; font-size: xx-large;">String and Math Functions</h2><br><hr><br>
+        <h3 style="color: rgb(5, 42, 247); font-family: Arial, Helvetica, sans-serif;"><u>String Functions</u></h3>
+        <script>
+            var str='Hello world!'
+            document.write(str,"<br><br>")
+            document.write("length =",str.length,"<br>")
+            document.write("Uppercase =",str.toUpperCase(),"<br>")
+            document.write("Lowercase =",str.toLowerCase(),"<br>")
+            document.write("Index character at 7=",str.charAt(7),"<br>")
+            document.write("Substring(0,5) =",str.substring(0,5),"<br>")
+            document.write("Split =",str.split(""),"<br>")
+            document.write("Slicing(1,6) =",str.slice(1,6),"<br>")
+            document.write("last index of string =",str.lastIndexOf("world!"),"<br>")
+            document.write("concatenation =",str.concat(" Welcome"),"<br>")
+            document.write("indexof string =",str.indexOf("Hello"),"<br>")
+
+        </script>
+        <h3 style="color: rgb(5, 42, 247); font-family: Arial, Helvetica, sans-serif;"><u>Math Functions</u></h3>
+        <script>
+            var num=123.4
+            document.write("Number = ",num,"<br><br>")
+            document.write("Square root of 123.4 =",Math.sqrt(num),"<br>")
+            document.write("power to 3 =",Math.pow(num,3),"<br>")
+            document.write("Absolute Value =",Math.abs(num),"<br>")
+            document.write("Round Value =",Math.round(num),"<br>")
+            document.write("Ceil Value =",Math.ceil(num),"<br>")
+            document.write("Floor Value =",Math.floor(num),"<br>")
+            document.write("Random Value =",Math.random(),"<br>")
+            document.write("Pi Value =",Math.PI,"<br>")
+            document.write("Max Value of (10,20,30) =",Math.max(10,20,30),"<br>")
+            document.write("Min Value of (10,20,30) =",Math.min(10,20,30))
+        </script>
+    </body>
+</html>
