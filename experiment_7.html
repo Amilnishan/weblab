@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Calendar</title>
+        <style>
+            table{
+                border-collapse: collapse;
+            }
+            td,th{
+                border: 1px solid black; padding: 3px; text-align: center;
+            }
+            th{
+                font-weight: bold; background-color: #E6E6E6;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div id="calendar"></div>
+        <script>
+            function createCalendar()
+            {
+                var year = document.getElementById("year").value;
+                var calendarContainer = document.getElementById("calendar");
+                for (let mon = 0; mon < 12; mon++) {
+                    let d = new Date(year, mon);  
+                    let table = '<strong>' + months[mon] + '</strong><br>';
+                    table += '<table border="5"><tr><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th><th>SUN</th></tr><tr>';
+                    
+                    // Add empty cells for the days before the 1st day of the month
+                    for (let i = 0; i < getDay(d); i++) {
+                        table += '<td></td>';
+                    }
+                    
+                    // Fill the calendar with the days of the month
+                    while (d.getMonth() == mon) {
+                        table += '<td>' + d.getDate() + '</td>';
+                        if (getDay(d) % 7 == 6) {
+                            table += '</tr><tr>';  // Start a new row after Sunday
+                        }
+                        d.setDate(d.getDate() + 1);
+                    }
+                    
+                    // Add empty cells for the days after the last day of the month
+                    if (getDay(d) != 0) {
+                        for (let i = getDay(d); i < 7; i++) {
+                            table += '<td></td>';
+                        }
+                    }
+
+                    table += '</tr></table><br>';
+                    calendarContainer.insertAdjacentHTML('beforeend', table);  // Corrected the insert location
+                }
+            }
+
+            function getDay(date) {
+                let day = date.getDay();
+                if (day == 0) day = 7; // Sunday is treated as 7, not 0
+                return day - 1;  // Return a zero-indexed value (Monday is 0)
+            }
+
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        </script>
+        Enter a year: <input type="number" id="year"><br><br>
+        <input type="button" value="Generate Calendar" onclick="createCalendar()">
+    </center>
+    </body>
+</html>
