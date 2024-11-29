@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>background-color</title>
+    </head>
+    <body bgcolor="grey">
+        <center>
+        <h2>BG COLOR</h2><hr><br>
+        <button onclick="changeColor()">Color Button</button>&emsp;
+    </center>
+    </body>
+    <script>
+         let colors = ['blue', 'red', 'yellow','green','pink'];
+        let currentColorIndex = 0;
+
+        function changeColor() {
+            // Change the background color to the next one in the array
+            document.body.style.backgroundColor = colors[currentColorIndex];
+            
+            // Update the current color index to cycle through the array
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+        }
+    </script>
+</html>
