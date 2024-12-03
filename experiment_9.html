@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>mouseover</title>
+    </head>
+    <body>
+        <center>
+        <h2>MouseOver</h2><hr><br>
+        <img onmouseover="imagechange(this)" src="image1.jpeg" width="500px" height="400px" >
+            <p id="text"></p>
+
+    </center>
+    </body>
+    <script>
+    let img = ['image1.jpeg','images.jpeg','bgimg.jpeg'];
+    let txt = ['First image','Second Image','Third image'];
+
+        let i = 0;
+        function imagechange(imageElement)
+        {
+
+        // Change the src of only the hovered image
+        imageElement.src = img[i];
+        
+        // Change the text
+        document.getElementById('text').innerHTML = txt[i];
+
+        i = (i + 1) % img.length;
+        }
+    </script>
+</html>
