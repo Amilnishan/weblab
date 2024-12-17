@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Exam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #faa7f4;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            background: #fff;
+            width: 60%;
+            margin: 30px auto;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        button, input[type="reset"] {
+            font-size: 16px;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        input[type="reset"] {
+            background-color: #f44336;
+            color: white;
+        }
+        input[type="reset"]:hover {
+            background-color: #e53935;
+        }
+        #scoreDisplay {
+            text-align: center;
+            font-size: 25px;
+            color: #000000;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h2>Online Exam</h2>
+        <hr>
+        <br>
+    </center>
+    <form>
+        1. What does CPU stand for in computer terminology?<br><br>
+        a.] Central Program Unit <input type="radio" name="qs1" value="a"><br>
+        b.] Central Processing Unit <input type="radio" name="qs1" value="b"><br>
+        c.] Computer Personal Unit <input type="radio" name="qs1" value="c"><br>
+        d.] Central programming Unit <input type="radio" name="qs1" value="d"><br><br>
+
+        2. Which of the following is a storage device?<br><br>
+        a.] Monitor <input type="radio" name="qs2" value="a"><br>
+        b.] Printer <input type="radio" name="qs2" value="b"><br>
+        c.] Hard Disk <input type="radio" name="qs2" value="c"><br>
+        d.] Keyboard <input type="radio" name="qs2" value="d"><br><br>
+
+        3. What is the full form of the URL?<br><br>
+        a.] Uniform Resource Locator <input type="radio" name="qs3" value="a"><br>
+        b.] Unified Resource Locator <input type="radio" name="qs3" value="b"><br>
+        c.] Universal Resource Locator <input type="radio" name="qs3" value="c"><br>
+        d.] Uniform Retrieval Locator <input type="radio" name="qs3" value="d"><br><br>
+
+        4. Which of the following is not an operating system?<br><br>
+        a.] Windows <input type="radio" name="qs4" value="a"><br>
+        b.] MacOS <input type="radio" name="qs4" value="b"><br>
+        c.] Linux <input type="radio" name="qs4" value="c"><br>
+        d.] Java <input type="radio" name="qs4" value="d"><br><br>
+
+        5. What is the main function of the ALU in a computer?<br><br>
+        a.] Perform arithmetic and logic operations <input type="radio" name="qs5" value="a"><br>
+        b.] Store data <input type="radio" name="qs5" value="b"><br>
+        c.] Control memory allocation <input type="radio" name="qs5" value="c"><br>
+        d.] Display output <input type="radio" name="qs5" value="d"><br><br>
+
+        6. Who is known as the "father of the computer"?<br><br>
+        a.] Charles Babbage <input type="radio" name="qs6" value="a"><br>
+        b.] Alan Turing <input type="radio" name="qs6" value="b"><br>
+        c.] Bill Gates <input type="radio" name="qs6" value="c"><br>
+        d.] Steve Jobs <input type="radio" name="qs6" value="d"><br><br>
+
+        7. Which of the following is a language used for web development?<br><br>
+        a.] Python <input type="radio" name="qs7" value="a"><br>
+        b.] C++ <input type="radio" name="qs7" value="b"><br>
+        c.] HTML <input type="radio" name="qs7" value="c"><br>
+        d.] Java <input type="radio" name="qs7" value="d"><br><br>
+
+        8. What is the purpose of an IP address in networking?<br><br>
+        a.] To send data <input type="radio" name="qs8" value="a"><br>
+        b.] To identify a device on a network <input type="radio" name="qs8" value="b"><br>
+        c.] To control traffic <input type="radio" name="qs8" value="c"><br>
+        d.] To encrypt messages <input type="radio" name="qs8" value="d"><br><br>
+
+        9. What is the most common type of memory used in personal computers?<br><br>
+        a.] ROM <input type="radio" name="qs9" value="a"><br>
+        b.] RAM <input type="radio" name="qs9" value="b"><br>
+        c.] Cache <input type="radio" name="qs9" value="c"><br>
+        d.] Hard Drive <input type="radio" name="qs9" value="d"><br><br>
+
+        10. Which of the following is a type of software used to detect viruses?<br><br>
+        a.] Firewall <input type="radio" name="qs10" value="a"><br>
+        b.] Antivirus <input type="radio" name="qs10" value="b"><br>
+        c.] File Compression <input type="radio" name="qs10" value="c"><br>
+        d.] Operating System <input type="radio" name="qs10" value="d"><br><br>
+
+        <button onclick="calculateScore(event)" name="submit">Submit</button>&emsp;
+        <input type="reset">
+        <br>
+    </form>
+    <div id="scoreDisplay"></div>
+
+    <script>
+        const answers = {
+            qs1: 'b',
+            qs2: 'c',
+            qs3: 'a',
+            qs4: 'd',
+            qs5: 'a',
+            qs6: 'a',
+            qs7: 'c',
+            qs8: 'b',
+            qs9: 'b',
+            qs10: 'b'
+        };
+
+        function calculateScore(event) {
+            event.preventDefault(); // Prevent form submission
+
+            let score = 0;
+            for (let question in answers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedOption && selectedOption.value === answers[question]) {
+                    score++;
+                }
+            }
+            const scoreDisplay = document.getElementById("scoreDisplay");
+            scoreDisplay.innerHTML = `<br>You scored <b>${score} out of 10</b>.`;
+        }
+    </script>
+</body>
+</html>
